@@ -92,12 +92,12 @@ body {
   text-align: center;
 }
 
-/* WhatsApp Button */
-.whatsapp-float {
+/* Floating ChatBot Button */
+.floating-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background-color: #ff5722;
   color: white;
   font-size: 28px;
   padding: 15px 18px;
@@ -105,13 +105,16 @@ body {
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   z-index: 1000;
-}
-
-/* Chatbot container */
-.chatbot-container {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.floating-btn:hover {
+  background-color: #e64a19;
+  transform: scale(1.1);
 }
 
 /* Animations */
@@ -160,20 +163,13 @@ body {
   </p>
 </div>
 
-<!-- Chatbot Section -->
-<div class="chatbot-container">
-  <iframe style="width: 400px; height: 600px; border:none;"
-    src="https://app.fastbots.ai/embed/cmlwlhixk02copa1p7ww3udk8">
-  </iframe>
-</div>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/201000025396?text=Hello%20I%20want%20technical%20support" 
-   class="whatsapp-float" target="_blank">💬</a>
+<!-- Floating FastBots ChatBot Button -->
+<div class="floating-btn" id="chatbotBtn">🤖</div>
 
 <script>
 let isArabic = false;
 
+// Switch language
 function switchLang() {
   isArabic = !isArabic;
 
@@ -193,6 +189,15 @@ function switchLang() {
       "We help companies and individuals solve IT issues remotely, including networks, devices, servers, and software problems.";
   }
 }
+
+// Open FastBots chatbot in popup
+document.getElementById("chatbotBtn").addEventListener("click", function() {
+  window.open(
+    "https://app.fastbots.ai/embed/cmlwlhixk02copa1p7ww3udk8",
+    "chatbot",
+    "width=400,height=600,resizable=yes,scrollbars=no"
+  );
+});
 </script>
 
 </body>
