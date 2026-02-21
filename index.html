@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <title>Troubleshooters</title>
@@ -7,7 +7,7 @@
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: Arial, sans-serif; color:#333;}
+    body {font-family: Arial, sans-serif; color:#333; direction:rtl;}
 
     nav {
       background:#1f2d3d;
@@ -97,6 +97,7 @@
         el.innerHTML = el.getAttribute("data-" + lang);
       });
       document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+      document.documentElement.lang = lang;
     }
   </script>
 </head>
@@ -107,9 +108,9 @@
 <nav>
   <div class="logo">Troubleshooters</div>
   <div class="menu">
-    <a href="#services" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
+    <a href="#services" data-en="Our Services" data-ar="خدماتنا">خدماتنا</a>
     <a href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank"
-       data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+       data-en="Book Now" data-ar="احجز الآن">احجز الآن</a>
     <a onclick="switchLang('ar')">AR</a>
     <a onclick="switchLang('en')">EN</a>
   </div>
@@ -117,32 +118,33 @@
 
 <!-- Hero -->
 <section class="hero">
-  <h1 data-en="Technical Support Made Easy" data-ar="الدعم الفني أصبح أسهل">Technical Support Made Easy</h1>
+  <h1 data-en="Technical Support Made Easy" data-ar="الدعم الفني أصبح أسهل">الدعم الفني أصبح أسهل</h1>
   <p data-en="Remote IT support for individuals and small businesses. First session FREE!"
      data-ar="دعم فني عن بُعد للأفراد والشركات الصغيرة. أول جلسة مجاناً!">
+     دعم فني عن بُعد للأفراد والشركات الصغيرة. أول جلسة مجاناً!
   </p>
   <a class="btn" href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank"
-     data-en="Book Your Session" data-ar="احجز جلستك الآن">Book Your Session</a>
+     data-en="Book Your Session" data-ar="احجز جلستك الآن">احجز جلستك الآن</a>
 </section>
 
 <!-- Services -->
 <section id="services" class="services">
-  <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+  <h2 data-en="Our Services" data-ar="خدماتنا">خدماتنا</h2>
   <div class="cards">
     <div class="card">
-      <h3 data-en="Network Setup" data-ar="إعداد الشبكات">Network Setup</h3>
+      <h3 data-en="Network Setup" data-ar="إعداد الشبكات">إعداد الشبكات</h3>
       <p data-en="Install and configure networks for stable connectivity."
          data-ar="تركيب وضبط الشبكات لضمان اتصال مستقر.">
       </p>
     </div>
     <div class="card">
-      <h3 data-en="PC Troubleshooting" data-ar="حل مشاكل الكمبيوتر">PC Troubleshooting</h3>
+      <h3 data-en="PC Troubleshooting" data-ar="حل مشاكل الكمبيوتر">حل مشاكل الكمبيوتر</h3>
       <p data-en="Diagnose and fix Windows and software issues."
          data-ar="تشخيص وحل مشاكل الويندوز والبرامج.">
       </p>
     </div>
     <div class="card">
-      <h3 data-en="Servers & CCTV" data-ar="السيرفرات والكاميرات">Servers & CCTV</h3>
+      <h3 data-en="Servers & CCTV" data-ar="السيرفرات والكاميرات">السيرفرات والكاميرات</h3>
       <p data-en="Setup and manage servers, CCTV, and file sharing."
          data-ar="إعداد وإدارة السيرفرات والكاميرات وأنظمة المشاركة.">
       </p>
