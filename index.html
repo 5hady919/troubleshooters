@@ -1,163 +1,157 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Troubleshooters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    /* reset */
     * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: Arial, sans-serif; color:#333;}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
-      direction: rtl;
-    }
-
-    /* المينيو */
+    /* Navbar */
     nav {
-      background: #2c3e50;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background:#1f2d3d;
+      color:white;
+      padding:15px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    nav .logo {
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      text-decoration: none;
+    nav .logo {font-size:26px; font-weight:bold;}
+    nav .menu a {
+      color:white;
+      text-decoration:none;
+      margin-left:15px;
+      padding:8px 15px;
+      border-radius:6px;
+      transition:.3s;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #27ae60;
-    }
+    nav .menu a:hover {background:#27ae60;}
 
-    /* هيرو سكن */
+    /* Hero */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1581091215364-0e55a7e3a9f0?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
+      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+      url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80")
+      center/cover no-repeat;
+      height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
     }
-    .hero h1 {
-      font-size: 60px;
-      margin-bottom: 20px;
+    .hero h1 {font-size:55px; margin-bottom:15px;}
+    .hero p {font-size:20px; margin-bottom:25px;}
+    .btn {
+      background:#27ae60;
+      color:white;
+      padding:14px 28px;
+      font-size:18px;
+      border-radius:8px;
+      text-decoration:none;
+      transition:.3s;
     }
-    .hero p {
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
-    .hero .btn {
-      background: #27ae60;
-      color: white;
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .hero .btn:hover {
-      background: #219150;
-    }
+    .btn:hover {background:#219150;}
 
-    /* الخدمات */
+    /* Services */
     .services {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
+      padding:60px 20px;
+      text-align:center;
+      max-width:1100px;
+      margin:auto;
     }
-    .services h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
+    .services h2 {margin-bottom:40px; font-size:32px;}
+    .cards {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
     }
-    .service-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .card {
+      background:white;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,.1);
+      width:260px;
     }
-    .service-card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      width: 250px;
-      transition: 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-    .service-card h3 {
-      margin-bottom: 15px;
-      color: #2c3e50;
-    }
-    .service-card p {
-      font-size: 16px;
-      color: #555;
-    }
+    .card h3 {margin-bottom:10px;}
 
-    /* الفوتر */
     footer {
-      background: #2c3e50;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+      background:#1f2d3d;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
     }
   </style>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        el.innerHTML = el.getAttribute("data-" + lang);
+      });
+      document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+    }
+  </script>
 </head>
+
 <body>
 
-  <!-- مينيو -->
-  <nav>
-    <a href="#" class="logo">Troubleshooters</a>
-    <a href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank">احجز موعد</a>
-  </nav>
+<!-- Navbar -->
+<nav>
+  <div class="logo">Troubleshooters</div>
+  <div class="menu">
+    <a href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    <a href="#" onclick="switchLang('ar')">AR</a>
+    <a href="#" onclick="switchLang('en')">EN</a>
+  </div>
+</nav>
 
-  <!-- هيرو -->
-  <section class="hero">
-    <h1>مرحباً بك في Troubleshooters</h1>
-    <p>خدمة دعم فني عن بعد للأفراد والشركات الصغيرة. أول جلسة مجانية!</p>
-    <a class="btn" href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank">احجز الآن</a>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <h1 data-en="Technical Support Made Easy" data-ar="الدعم الفني أصبح أسهل">Technical Support Made Easy</h1>
+  <p data-en="Remote IT support for individuals and small businesses. First session FREE!"
+     data-ar="دعم فني عن بُعد للأفراد والشركات الصغيرة. أول جلسة مجاناً!">
+     Remote IT support for individuals and small businesses. First session FREE!
+  </p>
+  <a class="btn" href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank"
+     data-en="Book Your Session" data-ar="احجز جلستك الآن">Book Your Session</a>
+</section>
 
-  <!-- الخدمات -->
-  <section class="services">
-    <h2>خدماتنا</h2>
-    <div class="service-cards">
-      <div class="service-card">
-        <h3>إعداد الشبكات</h3>
-        <p>تركيب وضبط الشبكات الداخلية والخارجية لضمان اتصال سلس.</p>
-      </div>
-      <div class="service-card">
-        <h3>حل مشاكل الكمبيوتر</h3>
-        <p>تشخيص وحل جميع مشاكل الكمبيوتر والويندوز والبرامج.</p>
-      </div>
-      <div class="service-card">
-        <h3>خدمة الكاميرات والسيرفرات</h3>
-        <p>إعداد ومتابعة CCTV، السيرفرات وأنظمة المشاركة.</p>
-      </div>
+<!-- Services -->
+<section class="services">
+  <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3 data-en="Network Setup" data-ar="إعداد الشبكات">Network Setup</h3>
+      <p data-en="Install and configure networks for stable connectivity."
+         data-ar="تركيب وضبط الشبكات لضمان اتصال مستقر.">
+         Install and configure networks for stable connectivity.
+      </p>
     </div>
-  </section>
+    <div class="card">
+      <h3 data-en="PC Troubleshooting" data-ar="حل مشاكل الكمبيوتر">PC Troubleshooting</h3>
+      <p data-en="Diagnose and fix Windows and software issues."
+         data-ar="تشخيص وحل مشاكل الويندوز والبرامج.">
+         Diagnose and fix Windows and software issues.
+      </p>
+    </div>
+    <div class="card">
+      <h3 data-en="Servers & CCTV" data-ar="السيرفرات والكاميرات">Servers & CCTV</h3>
+      <p data-en="Setup and manage servers, CCTV, and file sharing."
+         data-ar="إعداد وإدارة السيرفرات والكاميرات وأنظمة المشاركة.">
+         Setup and manage servers, CCTV, and file sharing.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <!-- الفوتر -->
-  <footer>
-    © 2026 Troubleshooters | كل الحقوق محفوظة
-  </footer>
+<footer>
+  © 2026 Troubleshooters
+</footer>
 
 </body>
 </html>
