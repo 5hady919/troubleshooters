@@ -9,7 +9,6 @@
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family: Arial, sans-serif; color:#333;}
 
-    /* Navbar */
     nav {
       background:#1f2d3d;
       color:white;
@@ -17,19 +16,23 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      position: sticky;
+      top: 0;
     }
-    nav .logo {font-size:26px; font-weight:bold;}
-    nav .menu a {
+
+    .logo {font-size:26px; font-weight:bold;}
+
+    .menu a {
       color:white;
       text-decoration:none;
       margin-left:15px;
       padding:8px 15px;
       border-radius:6px;
       transition:.3s;
+      cursor:pointer;
     }
-    nav .menu a:hover {background:#27ae60;}
+    .menu a:hover {background:#27ae60;}
 
-    /* Hero */
     .hero {
       background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
       url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80")
@@ -45,6 +48,7 @@
     }
     .hero h1 {font-size:55px; margin-bottom:15px;}
     .hero p {font-size:20px; margin-bottom:25px;}
+
     .btn {
       background:#27ae60;
       color:white;
@@ -56,7 +60,6 @@
     }
     .btn:hover {background:#219150;}
 
-    /* Services */
     .services {
       padding:60px 20px;
       text-align:center;
@@ -64,6 +67,7 @@
       margin:auto;
     }
     .services h2 {margin-bottom:40px; font-size:32px;}
+
     .cards {
       display:flex;
       flex-wrap:wrap;
@@ -77,7 +81,6 @@
       box-shadow:0 4px 15px rgba(0,0,0,.1);
       width:260px;
     }
-    .card h3 {margin-bottom:10px;}
 
     footer {
       background:#1f2d3d;
@@ -104,9 +107,11 @@
 <nav>
   <div class="logo">Troubleshooters</div>
   <div class="menu">
-    <a href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
-    <a href="#" onclick="switchLang('ar')">AR</a>
-    <a href="#" onclick="switchLang('en')">EN</a>
+    <a href="#services" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
+    <a href="https://calendar.app.google/MarC4AnYjB5Z1HPn6" target="_blank"
+       data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+    <a onclick="switchLang('ar')">AR</a>
+    <a onclick="switchLang('en')">EN</a>
   </div>
 </nav>
 
@@ -122,28 +127,25 @@
 </section>
 
 <!-- Services -->
-<section class="services">
+<section id="services" class="services">
   <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
   <div class="cards">
     <div class="card">
       <h3 data-en="Network Setup" data-ar="إعداد الشبكات">Network Setup</h3>
       <p data-en="Install and configure networks for stable connectivity."
          data-ar="تركيب وضبط الشبكات لضمان اتصال مستقر.">
-         Install and configure networks for stable connectivity.
       </p>
     </div>
     <div class="card">
       <h3 data-en="PC Troubleshooting" data-ar="حل مشاكل الكمبيوتر">PC Troubleshooting</h3>
       <p data-en="Diagnose and fix Windows and software issues."
          data-ar="تشخيص وحل مشاكل الويندوز والبرامج.">
-         Diagnose and fix Windows and software issues.
       </p>
     </div>
     <div class="card">
       <h3 data-en="Servers & CCTV" data-ar="السيرفرات والكاميرات">Servers & CCTV</h3>
       <p data-en="Setup and manage servers, CCTV, and file sharing."
          data-ar="إعداد وإدارة السيرفرات والكاميرات وأنظمة المشاركة.">
-         Setup and manage servers, CCTV, and file sharing.
       </p>
     </div>
   </div>
